@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Konyv from "./Konyv";
+import Kosar from "./Kosar";
 
 const konyvTomb = [
   {
@@ -45,10 +46,20 @@ function App() {
       <section>
         <p>A Könyvek darabszáma: {db}</p>
         <p>A Könyvek összára: {osszAr}</p>
-        <table>
-          {kosar.map((konyv, index) => {
-            return <Kosar konyv={konyv} key={index} />;
-          })}
+        <table className="table table-striped">
+          <thead>
+            <tr>
+              <th>Szerző</th>
+              <th>Cím</th>
+              <th>Ár</th>
+              <th>Db</th>
+            </tr>
+          </thead>
+          <tbody>
+            {kosaram.map((elem, index) => {
+              return <Kosar kosar={elem} key={index} />;
+            })}
+          </tbody>
         </table>
       </section>
       <article>
