@@ -45,6 +45,11 @@ function App() {
       <section>
         <p>A Könyvek darabszáma: {db}</p>
         <p>A Könyvek összára: {osszAr}</p>
+        <table>
+          {kosar.map((konyv, index) => {
+            return <Kosar konyv={konyv} key={index} />;
+          })}
+        </table>
       </section>
       <article>
         {konyvTomb.map((konyv, index) => {
