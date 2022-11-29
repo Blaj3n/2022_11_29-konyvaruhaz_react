@@ -32,7 +32,7 @@ function App() {
       <article>
         {
           konyvTomb.map((konyv, index) => {
-            return (<Konyv konyvObj={konyv} key={index} kosarKezelesFv={kosarKezeles} />)
+            return (<Konyv konyvObj={konyv} key={index} kosarKezeles={kosarKezeles} />)
           }
           )
         }
