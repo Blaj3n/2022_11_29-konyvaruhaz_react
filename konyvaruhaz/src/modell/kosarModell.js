@@ -11,6 +11,11 @@ class KosarModell {
     return this.#kosar;
   }
   setKosar(adat) {
+    //keresd meg, hogy van-e adat.id indexű elem (filter)
+    //ha nincs, akkor
+    adat.db=1;
+    //különben
+    //az adott indexű elem darabszámát kell megnövelni
     this.#kosar.push(adat);
   }
   getDb() {
@@ -23,6 +28,12 @@ class KosarModell {
     });
     this.#osszAr = ossz;
     return this.#kosar.length;
+  }
+  plusDb(){
+
+  }
+  minusDb(){
+
   }
 }
 

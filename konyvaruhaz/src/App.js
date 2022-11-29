@@ -6,16 +6,19 @@ import KosarModell from "./modell/kosarModell";
 
 const konyvTomb = [
   {
+    id: 1,
     cim: "Malevil",
     szerzo: "Robert Merle",
     ar: 2111,
   },
   {
+    id: 2,
     cim: "Védett férfiak",
     szerzo: "Robert Merle",
     ar: 1111,
   },
   {
+    id: 3,
     cim: "Állati elmék",
     szerzo: "Robert Merle",
     ar: 3111,
@@ -50,9 +53,10 @@ function App() {
       <section>
         <p>A Könyvek darabszáma: {db}</p>
         <p>A Könyvek összára: {osszAr}</p>
-        <table className="table table-striped">
+        <table class="table table-striped">
           <thead>
             <tr>
+              <th>Id</th>
               <th>Szerző</th>
               <th>Cím</th>
               <th>Ár</th>
