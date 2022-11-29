@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import Konyv from "./Konyv";
 
@@ -20,10 +21,13 @@ const konyvTomb = [
 ];
 
 function App() {
-  let db = 0; //számláló
+  /*state - reprezentálják az oldal állapotát
+  * és befrissítik az oldal vonatkozó részét
+  */
+  const [db,setDb] = useState(0);
   function kosarKezeles(adat) {
     /*Számoljuk meg, hány könyvet tettünk a kosárba */
-    db++;
+    setDb(db+1)
     console.log(db);
   }
 
