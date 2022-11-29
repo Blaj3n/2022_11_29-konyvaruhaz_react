@@ -22,13 +22,19 @@ const konyvTomb = [
 
 function App() {
   /*state - reprezentálják az oldal állapotát
-  * és befrissítik az oldal vonatkozó részét
-  */
-  const [db,setDb] = useState(0);
+   * és befrissítik az oldal vonatkozó részét
+   */
+  const [db, setDb] = useState(0);
+  const [osszAr, setOsszar] = useState(0);
+  const [kosaram, setKosaram] = useState([]);
   function kosarKezeles(adat) {
     /*Számoljuk meg, hány könyvet tettünk a kosárba */
-    setDb(db+1)
-    console.log(db);
+    setDb(db + 1);
+    /*összár */
+    setOsszar(osszAr + adat.ar);
+    kosaram.push(adat);
+    setKosaram(kosaram);
+    console.log(kosaram);
   }
 
   return (
@@ -38,6 +44,7 @@ function App() {
       </header>
       <section>
         <p>A Könyvek darabszáma: {db}</p>
+        <p>A Könyvek összára: {osszAr}</p>
       </section>
       <article>
         {konyvTomb.map((konyv, index) => {
