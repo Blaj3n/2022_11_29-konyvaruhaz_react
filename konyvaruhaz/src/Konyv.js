@@ -14,6 +14,7 @@ function Konyv(props) {
         <h3>{props.konyvObj.szerzo}</h3>
         <p>{props.konyvObj.cim}</p>
         <p>{props.konyvObj.ar}</p> 
+        <p>{props.konyvObj.db}</p> 
         {/*Könyv komponens kosárkezelésének hívása */}
         <button onClick={kosarKezeles}>Kosárba</button>    
     </div>

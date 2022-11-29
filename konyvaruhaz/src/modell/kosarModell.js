@@ -13,6 +13,17 @@ class KosarModell {
   setKosar(adat) {
     this.#kosar.push(adat);
   }
+  getDb() {
+    return this.#kosar.length;
+  }
+  getOsszar() {
+    let ossz = 0;
+    this.#kosar.forEach((elem) => {
+      ossz += elem.ar;
+    });
+    this.#osszAr = ossz;
+    return this.#kosar.length;
+  }
 }
 
 export default KosarModell;
