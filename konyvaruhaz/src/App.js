@@ -1,27 +1,30 @@
-import './App.css';
-import Konyv from './Konyv';
+import "./App.css";
+import Konyv from "./Konyv";
 
 const konyvTomb = [
   {
     cim: "Malevil",
     szerzo: "Robert Merle",
-    ar: 2111
+    ar: 2111,
   },
   {
     cim: "Védett férfiak",
     szerzo: "Robert Merle",
-    ar: 1111
+    ar: 1111,
   },
   {
     cim: "Állati elmék",
     szerzo: "Robert Merle",
-    ar: 3111
+    ar: 3111,
   },
-]
+];
 
 function App() {
+  let db = 0; //számláló
   function kosarKezeles(adat) {
-    console.log(adat)
+    /*Számoljuk meg, hány könyvet tettünk a kosárba */
+    db++;
+    console.log(db);
   }
 
   return (
@@ -29,15 +32,15 @@ function App() {
       <header className="App-header">
         <h1>Könyváruház</h1>
       </header>
+      <section>
+        <p>A Könyvek darabszáma: {db}</p>
+      </section>
       <article>
-        {
-          konyvTomb.map((konyv, index) => {
-            return (<Konyv konyvObj={konyv} key={index} kosarKezeles={kosarKezeles} />)
-          }
-          )
-        }
-
-
+        {konyvTomb.map((konyv, index) => {
+          return (
+            <Konyv konyvObj={konyv} key={index} kosarKezeles={kosarKezeles} />
+          );
+        })}
       </article>
       <footer>
         <p>saját név</p>
