@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Konyv from "./Konyv";
 import Kosar from "./Kosar";
+import KosarModell from "./modell/kosarModell";
 
 const konyvTomb = [
   {
@@ -28,13 +29,16 @@ function App() {
   const [db, setDb] = useState(0);
   const [osszAr, setOsszar] = useState(0);
   const [kosaram, setKosaram] = useState([]);
+
+  //KosarModell osztály példányosítása
+  const kosarModell = new KosarModell(kosaram);
   function kosarKezeles(adat) {
     /*Számoljuk meg, hány könyvet tettünk a kosárba */
     setDb(db + 1);
     /*összár */
     setOsszar(osszAr + adat.ar);
-    kosaram.push(adat);
-    setKosaram(kosaram);
+    kosarModell.setKosar(adat);
+    setKosaram(kosarModell.getKosar())
     console.log(kosaram);
   }
 
