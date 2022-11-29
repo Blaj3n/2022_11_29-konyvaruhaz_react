@@ -12,9 +12,10 @@ class KosarModell {
   }
   setKosar(adat) {
     //keresd meg, hogy van-e adat.id indexű elem (filter)
+    let azonosElem = this.#kosar.findIndex((elem) => {
+      return elem.id == adat.id;
+    });
     //ha nincs, akkor
-    adat.db=1;
-    //különben
     //az adott indexű elem darabszámát kell megnövelni
     this.#kosar.push(adat);
   }
@@ -28,12 +29,6 @@ class KosarModell {
     });
     this.#osszAr = ossz;
     return this.#kosar.length;
-  }
-  plusDb(){
-
-  }
-  minusDb(){
-
   }
 }
 

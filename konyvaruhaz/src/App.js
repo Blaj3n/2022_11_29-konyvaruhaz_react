@@ -41,10 +41,13 @@ function App() {
     /*összár */
     setOsszar(osszAr + adat.ar);
     kosarModell.setKosar(adat);
-    setKosaram(kosarModell.getKosar())
+    setKosaram(kosarModell.getKosar());
     console.log(kosaram);
   }
-
+  function novel(adat) {
+    console.log(adat);
+    //itt kell példányosítani a modell megfelelő tagfüggvényét
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -56,7 +59,6 @@ function App() {
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>Id</th>
               <th>Szerző</th>
               <th>Cím</th>
               <th>Ár</th>
@@ -65,7 +67,9 @@ function App() {
           </thead>
           <tbody>
             {kosaram.map((elem, index) => {
-              return <Kosar kosar={elem} key={index} />;
+            return (
+              <Kosar kosar={elem} key={index} novel={novel} />
+            );
             })}
           </tbody>
         </table>
